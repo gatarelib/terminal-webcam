@@ -36,6 +36,16 @@ def toASCII(frame, cols = 120, rows = 35):
     result += '\n'
   return result
 
+def grayToChar(gray):
+  CHAR_LIST = ' .:-=+*#%@'
+  num_chars = len(CHAR_LIST)
+  return CHAR_LIST[
+    min(
+      int(gray * num_chars / 255),
+      num_chars - 1
+    )
+  ]
+  
 
 if __name__ == '__main__':
     main()
